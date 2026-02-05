@@ -1,0 +1,21 @@
+[project]
+name = "cyclotron"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyterlab>=4.5.0",
+    "jupyterlab-lsp>=5.2.0",
+    "matplotlib>=3.10.8",
+    "nanovnasaver",
+    "numpy>=2.3.5",
+    "pyqt5>=5.15.11",
+    "python-lsp-server>=1.14.0",
+    "ruff>=0.14.14",
+    "scipy>=1.16.3",
+    "ty>=0.0.1a33",
+]
+
+[tool.uv.sources]
+nanovnasaver = { git = "https://github.com/NanoVNA-Saver/nanovna-saver" }
