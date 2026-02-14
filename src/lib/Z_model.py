@@ -1,5 +1,11 @@
 import numpy as np
 
+def linear(x,a,b):
+    return a*x + b
+
+def inverse_prop(x,a,b):
+    return a/x + b
+
 def L_pure(freq,L):
     omega = 2 * np.pi * freq
 
