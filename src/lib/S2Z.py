@@ -1,3 +1,5 @@
+import numpy as np
+
 Z0 = 50
 
 # port1 ---- +
@@ -63,3 +65,5 @@ def two_bridges_with_stray_in_port1(data1, data2):
     Zs = (1 + s11_2 - s21_2) * Zb1 / (s21_2 * (Zb1 / Z0 +1))
     return freq, Zb1, Zb2, Zs
 
+def db(x):
+    return 20 * np.log10(x)
