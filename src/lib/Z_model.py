@@ -9,20 +9,20 @@ def inverse_prop(x,a,b):
 def inverse_prop_ideal(x,a):
     return a/x
 
-def L_pure(freq,L):
+def L_ideal(freq,L):
     omega = 2 * np.pi * freq
 
     return 1j * omega * L
 
-def C_pure(freq,C):
+def C_ideal(freq,C):
     omega = 2 * np.pi * freq
 
     return 1 / (1j * omega * C)
 
 def L_stray(freq, L, C, R):
-    Z_L = L_pure(freq,L)
+    Z_L = L_ideal(freq,L)
     Z_R = R
-    Z_C = C_pure(freq,C)
+    Z_C = C_ideal(freq,C)
 
     Z_total = 1 / (1 / (Z_L + Z_R) + 1 / Z_C)
 
@@ -41,7 +41,7 @@ def L_stray_imag(freq, L, C, R):
 def RLC_ser_stray(freq, L, C, R, C_stray, R_stray):
     Z_L = L_stray(freq,L,C_stray,R_stray)
     Z_R = R
-    Z_C = C_pure(freq,C)
+    Z_C = C_ideal(freq,C)
 
     Z_total = Z_L + Z_R + Z_C
 
@@ -53,4 +53,22 @@ def RLC_ser_stray_abs_log(freq, L, C, R, C_stray, R_stray):
 
     return np.log(np.abs(Z))
 
+def CR_par(freq, C, R):
+    Z_R = R
+    Z_C = C_ideal(freq,C)
 
+    Z_total = 1 / (1 / Z_R + 1 / Z_C)
+
+    return Z_total
+
+
+def CR_par_real(freq, C, R):
+    Z = CR_par(freq, C, R)
+    real_part = np.array(Z.real, dtype=np.float64)
+    return real_part
+
+
+def CR_par_imag(freq, C, R):
+    Z = CR_par(freq, C, R)
+    imag_part = np.array(Z.imag, dtype=np.float64)
+    return imag_part
