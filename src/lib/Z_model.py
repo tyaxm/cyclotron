@@ -6,6 +6,9 @@ def linear(x,a,b):
 def inverse_prop(x,a,b):
     return a/x + b
 
+def inverse_prop_ideal(x,a):
+    return a/x
+
 def L_pure(freq,L):
     omega = 2 * np.pi * freq
 
@@ -49,3 +52,5 @@ def RLC_ser_stray_abs_log(freq, L, C, R, C_stray, R_stray):
     Z = RLC_ser_stray(freq, L, C, R, C_stray, R_stray)
 
     return np.log(np.abs(Z))
+
+
