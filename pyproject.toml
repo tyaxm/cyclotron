@@ -9,6 +9,7 @@ dependencies = [
     "jupyterlab-lsp>=5.2.0",
     "matplotlib>=3.10.8",
     "nanovnasaver",
+    "nbdime>=4.0.4",
     "numpy>=2.3.5",
     "pyqt5>=5.15.11",
     "python-lsp-server>=1.14.0",
