@@ -19,6 +19,9 @@ def C_ideal(freq,C):
 
     return 1 / (1j * omega * C)
 
+def C_ideal_imag(freq,C):
+    return C_ideal(freq,C).imag
+
 def L_stray(freq, L, C, R):
     Z_L = L_ideal(freq,L)
     Z_R = R
@@ -72,3 +75,23 @@ def CR_par_imag(freq, C, R):
     Z = CR_par(freq, C, R)
     imag_part = np.array(Z.imag, dtype=np.float64)
     return imag_part
+
+def JG_R(freq,C1,R1,C2,R2):
+    Z_C1 = C_ideal(freq,C1)
+    Z_R1 = R1
+    Z_C2 = C_ideal(freq,C2)
+    Z_R2 = R2
+
+    Z = (1/Z_C1 + 1/(Z_R1 + (1/Z_C2 + 1/Z_R2) ** -1)) ** -1
+
+    return Z
+
+def JG_R(freq,C1,R1,C2,R2):
+    Z_C1 = C_ideal(freq,C1)
+    Z_R1 = R1
+    Z_C2 = C_ideal(freq,C2)
+    Z_R2 = R2
+
+    Z = (1/Z_C1 + 1/(Z_R1 + (1/Z_C2 + 1/Z_R2) ** -1)) ** -1
+
+    return Z
