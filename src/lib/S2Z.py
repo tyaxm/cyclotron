@@ -39,14 +39,14 @@ def bridge_at_port2(data):
     return freq, Zs, Zb
 
 
-#data1
+# data1
 # port1 ---- + -----+-- Zs ---- port2 
 #            |      |
 #            Zb2    Zb1
 #            |      |
 # GND   ---- + -----+---------- GND
 
-#data2
+# data2
 # port1 --+-- Zs ---- + ---- port2 
 #         |          |
 #         Zb2        Zb1
@@ -67,3 +67,27 @@ def two_bridges_with_stray_in_port1(data1, data2):
 
 def db(x):
     return 20 * np.log10(x)
+
+# data1
+# port1 ---- + ---- Zs ---- + ---- port2 
+#            |              |
+#            Zb1            Zb2
+#            |              |
+# GND   ---- + ------------ + ---- GND
+
+# data2
+# port1 ---- + ---- Zs ---- + ---- port2 
+#            |              |
+#            Zb2            Zb1
+#            |              |
+# GND   ---- + ------------ + ---- GND
+
+def bridges_at_ports_1_2(data1,data2):
+    freq = data1[:, 0]
+    s11_1 = data1[:, 1] + 1j * data1[:, 2]
+    s21_1 = data1[:, 3] + 1j * data1[:, 4]
+    s11_2 = data2[:, 1] + 1j * data2[:, 2]
+    s21_2 = data2[:, 3] + 1j * data2[:, 4]
+    Zb1 = ((1 + (1 - s11_2)*s21_1/((1-s11_1)(1-s11_2) - s21_1 * s21_2))/Z0) ** -1
+    Zb2 = ((1 + (1 - s11_1)*s21_2/((1-s11_1)(1-s11_2) - s21_1 * s21_2))/Z0) ** -1
+    
