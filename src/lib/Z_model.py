@@ -95,3 +95,11 @@ def JG_R(freq,C1,R1,C2,R2):
     Z = (1/Z_C1 + 1/(Z_R1 + (1/Z_C2 + 1/Z_R2) ** -1)) ** -1
 
     return Z
+
+def JG_R_real(freq,C1,R1,C2,R2):
+    Z = JG_R(freq,C1,R1,C2,R2)
+    return Z.real
+
+def JG_R_imag(freq,C1,R1,C2,R2):
+    Z = JG_R(freq,C1,R1,C2,R2)
+    return Z.imag
