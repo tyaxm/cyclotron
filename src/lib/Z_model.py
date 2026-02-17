@@ -14,6 +14,9 @@ def L_ideal(freq,L):
 
     return 1j * omega * L
 
+def L_ideal_imag(freq,L):
+    return L_ideal(freq,L).imag
+
 def C_ideal(freq,C):
     omega = 2 * np.pi * freq
 
