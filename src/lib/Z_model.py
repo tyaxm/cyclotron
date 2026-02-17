@@ -86,16 +86,6 @@ def JG_R(freq,C1,R1,C2,R2):
 
     return Z
 
-def JG_R(freq,C1,R1,C2,R2):
-    Z_C1 = C_ideal(freq,C1)
-    Z_R1 = R1
-    Z_C2 = C_ideal(freq,C2)
-    Z_R2 = R2
-
-    Z = (1/Z_C1 + 1/(Z_R1 + (1/Z_C2 + 1/Z_R2) ** -1)) ** -1
-
-    return Z
-
 def JG_R_real(freq,C1,R1,C2,R2):
     Z = JG_R(freq,C1,R1,C2,R2)
     return Z.real
