@@ -79,6 +79,18 @@ def CR_par_imag(freq, C, R):
     imag_part = np.array(Z.imag, dtype=np.float64)
     return imag_part
 
+def CR_par_and_DEE(freq,C,R,C_dee):
+    Z_CR = C_ideal(freq,C) + R
+    Z_dee = C_ideal(freq,C_dee)
+
+    return Z_CR + Z_dee
+
+def CR_par_and_DEE_real(freq,C,R,C_dee):
+    return CR_par_and_DEE(freq,C,R,C_dee).real
+
+def CR_par_and_DEE_imag(freq,C,R,C_dee):
+    return CR_par_and_DEE(freq,C,R,C_dee).imag
+
 def JG_R(freq,C1,R1,C2,R2):
     Z_C1 = C_ideal(freq,C1)
     Z_R1 = R1
