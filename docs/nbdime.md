@@ -10,4 +10,14 @@ uv tool install nbdime
 ```
 とすればグローバルにインストールできます。
 
-gitとの連携に必要な設定は.gitattributesに書いておいたので、nbdimeがインストールできていれば使用することができるはずです。
+gitとの連携に必要な設定をするには.gitがあるフォルダで
+```
+nbdime config-git --enable
+```
+とすれば良いです。
+
+もしグローバルに設定する必要があれば
+```
+nbdime config-git --enable --global
+```
+とします。
