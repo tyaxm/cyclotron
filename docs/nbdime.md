@@ -10,4 +10,4 @@ uv tool install nbdime
 ```
 とすればグローバルにインストールできます。
 
-必要な設定は.gitattributesに書いておいたので、nbdimeがインストールできていれば使用することができるはずです。
+gitとの連携に必要な設定は.gitattributesに書いておいたので、nbdimeがインストールできていれば使用することができるはずです。
