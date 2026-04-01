@@ -421,6 +421,7 @@ dependencies = [
     { name = "nanovnasaver" },
     { name = "nbdime" },
     { name = "numpy" },
+    { name = "pynanovna" },
     { name = "pyqt5" },
     { name = "python-lsp-server" },
     { name = "ruff" },
@@ -436,6 +437,7 @@ requires-dist = [
     { name = "nanovnasaver", git = "https://github.com/NanoVNA-Saver/nanovna-saver" },
     { name = "nbdime", specifier = ">=4.0.4" },
     { name = "numpy", specifier = ">=2.3.5" },
+    { name = "pynanovna", specifier = ">=1.0.2" },
     { name = "pyqt5", specifier = ">=5.15.11" },
     { name = "python-lsp-server", specifier = ">=1.14.0" },
     { name = "ruff", specifier = ">=0.14.14" },
@@ -1575,6 +1577,21 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz", hash = "sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887", size = 4968631, upload-time = "2025-06-21T13:39:12.283Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl", hash = "sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b", size = 1225217, upload-time = "2025-06-21T13:39:07.939Z" },
+]
+
+[[package]]
+name = "pynanovna"
+version = "1.0.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "pyserial" },
+    { name = "scipy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a7/ec/d55269cd0afc68ea095831f7adb677675603ba838a018ba357e1bc29dfe8/pynanovna-1.0.2.tar.gz", hash = "sha256:e39b30dd9f1d82eabad0e674e90e9611c76cb0457ad6de6ef5e85e02286a9219", size = 22320, upload-time = "2025-03-27T13:49:08.826Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3f/c7/32fc18e1ed92d44f320d88371a328d0fdde074325af32b76915d99dc1a2e/pynanovna-1.0.2-py3-none-any.whl", hash = "sha256:d7c7bbc0fd8e6def18169e842a0e22a630bb77a8f0d5c7e12888d71933c3bb09", size = 28776, upload-time = "2025-03-27T13:49:04.756Z" },
 ]
 
 [[package]]
