@@ -39,7 +39,7 @@ def main():
         print(f"Sweep Range: {start_f/1e6:.3f} - {stop_f/1e6:.3f} MHz")
         print("-" * 60)
         
-        num_display_lines = 4
+        num_display_lines = 3
         first_run = True
 
         while True:
