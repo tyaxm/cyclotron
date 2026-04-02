@@ -3,6 +3,9 @@ import numpy as np
 def linear(x,a,b):
     return a*x + b
 
+def linear2(x,a):
+    return a*x
+
 def inverse_prop(x,a,b):
     return a/x + b
 
