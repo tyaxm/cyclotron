@@ -3,7 +3,7 @@ import sys
 import numpy as np
 import pynanovna
 
-CALIBRATION_FILE = "default.cal"
+CALIBRATION_FILE = "vna-assets/1-20MHz_1port_true.cal"
 CENTER_FREQ = 10.13e6
 SPAN_FREQ = 0.2e6
 SWEEP_POINTS = 401
@@ -57,7 +57,7 @@ def main():
                 sys.stdout.write(UP_CURSOR * num_display_lines)
 
             lines = [
-                f"{CLEAR_LINE}frequency  : {target_f/1e6:10.6f } MHz -> {get_color_text(target_f, CENTER_FREQ, 'Hz')}",
+                f"{CLEAR_LINE}frequency  : {target_f/1e6:10.6f} MHz -> {get_color_text(target_f/1e6, CENTER_FREQ/1e6, 'MHz')}",
                 f"{CLEAR_LINE}reactance  : {target_z.imag:10.6f} Ω   -> {get_color_text(target_z.imag, 0, 'Ω')}",
                 f"{CLEAR_LINE}resistance : {target_z.real:10.6f} Ω   -> {get_color_text(target_z.real, 50.0, 'Ω')}"
             ]
